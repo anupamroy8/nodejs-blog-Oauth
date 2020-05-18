@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of articles</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1>Welcome to Blog</h1>
+    <a href="/articles/new" class="btn">Publish a new article</a>
+    <br>
+    <a class="left btn2" href="/users/logout">Logout</a>
+    <a class="left2 btn2" href="#"><%=locals.user.name%></a>
+    <br>
+    <p><%=message %></p>
+    <br>
+    <ol>List of articles:
+        <%if(article.length) { %>
+            <% article.forEach(article => { %>
+                <li> Article Title: <span class="bold"><a href="/articles/<%=article.id%>">"<%=article.title %>"</a></span>    Article Description: <span class="bold"> "<%=article.description.slice(0, 50)%>..."</span> </li>
+                <% if(user._id.toString() === article.author.toString()) {%>
+                <p><a href="/articles/<%=article.id%>/edit" class="btn3">EDIT</a>  <a href="/articles/<%=article.id%>/delete" class="btn3">DELETE</a> <i class="far fa-thumbs-up"></i><span class="bold count"> <%=article.likes %> </span></p>
+                <% } %>
+            <% }) %>
+       <% } else { %>
+            <h2>No Articles present</h2>
+        <% } %>
+
+    </ol>
+    <br>
+
+    <a href="/articles/new" class="btn">Publish a new article</a>
+    <script src="https://kit.fontawesome.com/7b88d6941e.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Article Details</title>
+</head>
+<body>
+    <h1>Article Details:</h1>
+    <br>
+    <a href="/articles">HOME</a>
+    <a href="/articles/new">Publish new article</a>
+    <br>
+    <a class="left btn2" href="/users/logout">Logout</a>
+    <a class="left2 btn2" href="#"><%=locals.user.name%></a>
+    <br>
+    <br>
+    <h3>Article Title: <span class="bold">"<%=article.title %>"</span></h2> <br>
+    <h4>Article Description:</h4>
+    <p><span class="bold"><%=article.description %></span></p>
+    <br>
+    <div class="imgcontainer">
+        <img src="/images/uploads/<%=article.image%>" alt="avatar">
+    </div>
+    
+    <br>
+    <h4>Article Author: <span class="bold">"<%=article.author.name %></span>"</h4> <br>
+    <% if(user._id.toString() === article.author.id.toString()) {%>
+    <h4><a href="/articles/<%=article.id%>/edit"><i class="far fa-edit"></i></a>   <a href="/articles/<%=article.id%>/delete"><i class="far fa-trash-alt"></i></a></h4>
+    <% } %>
+    <br>
+    <br>
+    <h5>Last updated: <%=article.updatedAt%></h5>
+    <p id="likes">Likes:  <span class="bold"> <%=article.likes %> </span> <a href="/articles/<%=article.id%>/like"><i class="far fa-thumbs-up"></i></a>  <a href="/articles/<%=article.id%>/dislike"><i class="far fa-thumbs-down"></i></a></p>
+
+    <span class="bold" >Tags: </span>
+    <% article.tags.forEach(a => { %>
+        <span class="tag"><%= a %></span>
+        <%}) %>
+    <br>
+
+    <form action="/articles/<%=article.id%>/comments" method="POST">
+        <textarea name="content" id="" cols="80" rows="5" placeholder="Add Comments here.."></textarea>
+        <br><br>
+        <button type="submit" class="btn">Add comment</button>
+    </form>
+    
+    <br>
+    <h4 id="comment">Comments:</h4>
+    <br>
+
+    <% comments.reverse().forEach(c => {%>
+        <div class="comment">
+            <p class="author"><%=c.author.name%> say's:</p>
+            <i><%=c.content%></i>
+            <br>
+            <% if(user._id.toString() === c.author.id.toString()) {%>
+            <a href="/comments/<%=c.id%>/edit"><i class="far fa-edit"></i></a>
+            <a href="/comments/<%=c.id%>/delete"><i class="far fa-trash-alt"></i></a>
+            <% } %>
+        </div>      
+    <%})%>
+        
+    <br>
+    <br>
+    <a href="/articles">HOME</a>
+    <a href="/articles/new">Publish new article</a>
+
+   <script src="https://kit.fontawesome.com/7b88d6941e.js" crossorigin="anonymous"></script>
+</body>
+</html>

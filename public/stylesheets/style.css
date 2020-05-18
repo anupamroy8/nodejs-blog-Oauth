@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/* My CSS */
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(165, 218, 185);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+.left {
+  text-align: left;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+.left2 {
+  text-align: left;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+}
+
+textarea {
+  margin: 20px 0;
+}
+
+label {
+  font-size: 20px;
+  color: rgba(255, 123, 0, 0.794);
+  font-weight: bold;
+}
+
+.btn {
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(2, 85, 13);
+  background-color: rgb(52, 233, 82);
+}
+
+.btn:hover {
+  background-color: rgb(13, 163, 33);
+}
+
+.btn2 {
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(80, 20, 121);
+  background-color: rgb(188, 160, 207);
+}
+
+.btn2:hover {
+  background-color: rgb(144, 120, 160);
+}
+
+.btn3 {
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(114, 41, 86);
+  background-color: rgb(139, 241, 161);
+}
+
+.btn3:hover {
+  background-color: rgb(127, 212, 146);;
+}
+
+.tag {
+  font-size: 20px;
+  margin: 10px 5px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  border: 1px solid rgb(1, 32, 5);
+  background-color: rgb(231, 185, 60);
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
+
+/* .imgcontainer {
+  width: 350px;
+  height: 250px;
+}  */
+
+
+h1 {
+  color: rgb(170, 19, 19);
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h6 {
+  margin-bottom: 20px;
+}
+p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+a, .count {
+  text-decoration: none;
+  color: rgb(36, 37, 95);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+ol {
+  font-size: 24px;
+  color: blueviolet;
+  padding: 20px 0;
+}
+
+ol a {
+  text-decoration: none;
+}
+
+li {
+  padding-top: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fa-thumbs-up {
+  font-size: 24px;
+  color: rgb(21, 153, 21)
+}
+
+.fa-thumbs-down {
+  font-size: 24px;
+  color: rgb(212, 17, 17);
+}
+
+/* Comments */
+.comment {
+  border: 1px dashed black;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: rgb(238, 231, 172);
+}
+.author {
+  color: rgb(84, 50, 116);
+}
+.edit {
+  text-align: right;
+}
